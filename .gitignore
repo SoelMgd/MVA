@@ -1,0 +1,9 @@
+# Ignorer le dossier de l'environnement virtuel
+MVA_venv/
+__MACOSX/
+Assignment 1 - ML for TS (MVA)/
+
+
+
+# Ignorer tous les fichiers .zip
+*.zip
