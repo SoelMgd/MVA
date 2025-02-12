@@ -8,3 +8,4 @@ Kaggle_competition
 
 # Ignorer tous les fichiers .zip
 *.zip
+data/
