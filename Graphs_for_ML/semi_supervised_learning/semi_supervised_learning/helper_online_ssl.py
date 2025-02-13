@@ -35,7 +35,7 @@ def online_face_recognition(profile_names,
         labels += [np.ones(p.shape[0]) * (i + 1)]
         label_names += [name]
     faces = np.vstack(images)
-    labels = np.hstack(labels).astype(np.int)
+    labels = np.hstack(labels).astype(int)
     #  Generate model
     model = IncrementalKCenters(faces, labels, label_names)
     # Start camera
@@ -221,7 +221,7 @@ def preprocess_face(grey_face):
 
     # resize the face
     grey_face = cv.resize(grey_face, (EXTR_FRAME_SIZE, EXTR_FRAME_SIZE))
-    grey_face = grey_face.reshape(EXTR_FRAME_SIZE * EXTR_FRAME_SIZE).astype(np.float)
+    grey_face = grey_face.reshape(EXTR_FRAME_SIZE * EXTR_FRAME_SIZE).astype(float)
     grey_face -= grey_face.mean()
     grey_face /= grey_face.max()
 
