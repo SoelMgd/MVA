@@ -112,7 +112,7 @@ def load_image_data(preprocess_fn=default_preprocess_image):
     return images, labels, masked_labels
 
 
-def load_image_data_augmented(preprocess_fn=default_preprocess_image):
+def load_image_data_augmented(preprocess_fn=default_preprocess_image, number_unmasked_labels=4):
     # Parameters
     cc = cv2.CascadeClassifier(os.path.join('data', 'haarcascade_frontalface_default.xml'))
     # Loading images
@@ -153,7 +153,7 @@ def load_image_data_augmented(preprocess_fn=default_preprocess_image):
     masked_labels: (n x 1) masked label vector, where entries Y_i take a values in [1, ..., num_classes] if the node is  
               labeled, or 0 if the node is unlabeled (masked)   
     """
-    masked_labels = mask_labels(labels, 4, per_class=True)
+    masked_labels = mask_labels(labels, number_unmasked_labels, per_class=True)
 
     return images, labels, masked_labels
 
